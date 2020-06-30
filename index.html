@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.8.1"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.8.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
 </head>
 <body>
-<div class="vega-visualization" id="vega-visualization-70d44de1d4fe41d48a16ed3f02cf19f6"></div>
-<script type="text/javascript">
-  const spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-c2a3e89ba9d5d1687d5e8c28d630a033"}, "mark": "bar", "encoding": {"x": {"type": "nominal", "field": "a"}, "y": {"type": "quantitative", "field": "b"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-c2a3e89ba9d5d1687d5e8c28d630a033": [{"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43}, {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53}, {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}]}};
-  const embedOpt = {};
-  vegaEmbed('#vega-visualization-70d44de1d4fe41d48a16ed3f02cf19f6', spec, embedOpt).catch(console.error);
-</script>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "vconcat": [{"layer": [{"mark": "line", "encoding": {"color": {"type": "nominal", "field": "File"}, "x": {"type": "quantitative", "field": "dm", "scale": {"nice": false, "padding": 20, "type": "log"}, "title": "merger distance in \u00b5m"}, "y": {"type": "quantitative", "field": "ds", "scale": {"nice": false, "padding": 20, "type": "log"}, "title": "split distance in \u00b5m"}}}, {"mark": {"type": "point", "filled": true, "size": 60}, "encoding": {"color": {"type": "nominal", "field": "File"}, "shape": {"type": "nominal", "field": "Task"}, "text": {"type": "quantitative", "field": "mapping"}, "tooltip": [{"type": "quantitative", "field": "splits"}, {"type": "quantitative", "field": "mergers"}, {"type": "quantitative", "field": "inter_error_distance"}], "x": {"type": "quantitative", "field": "dm", "scale": {"nice": false, "padding": 20, "type": "log"}, "title": "merger distance in \u00b5m"}, "y": {"type": "quantitative", "field": "ds", "scale": {"nice": false, "padding": 20, "type": "log"}, "title": "split distance in \u00b5m"}}}, {"mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 7}, "encoding": {"color": {"type": "nominal", "field": "File"}, "text": {"type": "quantitative", "field": "mapping"}, "x": {"type": "quantitative", "field": "dm", "scale": {"nice": false, "padding": 20, "type": "log"}, "title": "merger distance in \u00b5m"}, "y": {"type": "quantitative", "field": "ds", "scale": {"nice": false, "padding": 20, "type": "log"}, "title": "split distance in \u00b5m"}}}], "resolve": {"scale": {"strokeDash": "independent"}}}, {"layer": [{"mark": "bar", "encoding": {"color": {"type": "nominal", "field": "File"}, "shape": {"type": "nominal", "field": "Task"}, "text": {"type": "quantitative", "field": "mapping"}, "tooltip": [{"type": "quantitative", "field": "splits"}, {"type": "quantitative", "field": "mergers"}, {"type": "quantitative", "field": "inter_error_distance"}], "x": {"type": "quantitative", "aggregate": "mean", "field": "segment_zero_count", "title": "segment 0 count"}, "y": {"type": "nominal", "axis": {"labels": false}, "field": "File", "title": null}}}, {"mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 7}, "encoding": {"color": {"value": "black"}, "shape": {"type": "nominal", "field": "Task"}, "text": {"type": "nominal", "field": "File"}, "tooltip": [{"type": "quantitative", "field": "splits"}, {"type": "quantitative", "field": "mergers"}, {"type": "quantitative", "field": "inter_error_distance"}], "x": {"value": 0}, "y": {"type": "nominal", "axis": {"labels": false}, "field": "File", "title": null}}}]}], "data": {"name": "data-787fdc4e62edc8ddec31797825dd315f"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-787fdc4e62edc8ddec31797825dd315f": [{"File": "l4_column-subset_axons_only_99-0.yaml", "Task": "evaluate_sparse_cell8_axon", "mapping": 65, "segment_zero_count": 47, "ds": 816.9177600173263, "dm": 279937.84538539674, "splits": 12679, "mergers": 37, "path_length": 10357700.27925968, "inter_error_distance": 814.540758041812}, {"File": "l4_column-subset_axons_only_99-0.yaml", "Task": "evaluate_sparse_cell8_axon", "mapping": 70, "segment_zero_count": 47, "ds": 927.0294709800123, "dm": 225167.3973752104, "splits": 11173, "mergers": 46, "path_length": 10357700.27925968, "inter_error_distance": 923.2284766253392}, {"File": "l4_column-subset_axons_only_99-0.yaml", "Task": "evaluate_sparse_cell8_axon", "mapping": 75, "segment_zero_count": 47, "ds": 1069.6788473881732, "dm": 167059.68192354322, "splits": 9683, "mergers": 62, "path_length": 10357700.27925968, "inter_error_distance": 1062.8732969994542}, {"File": "l4_column-subset_axons_only_99-0.yaml", "Task": "evaluate_sparse_cell8_axon", "mapping": 80, "segment_zero_count": 47, "ds": 1285.2339346394938, "dm": 129471.25349074599, "splits": 8059, "mergers": 80, "path_length": 10357700.27925968, "inter_error_distance": 1272.601090952166}, {"File": "l4_column-subset_axons_only_99-9.yaml", "Task": "evaluate_sparse_cell8_axon", "mapping": 65, "segment_zero_count": 47, "ds": 869.5181564187105, "dm": 199186.5438319169, "splits": 11912, "mergers": 52, "path_length": 10357700.27925968, "inter_error_distance": 865.7389066582815}, {"File": "l4_column-subset_axons_only_99-9.yaml", "Task": "evaluate_sparse_cell8_axon", "mapping": 70, "segment_zero_count": 47, "ds": 1005.8949479712227, "dm": 167059.68192354322, "splits": 10297, "mergers": 62, "path_length": 10357700.27925968, "inter_error_distance": 999.8745322192952}, {"File": "l4_column-subset_axons_only_99-9.yaml", "Task": "evaluate_sparse_cell8_axon", "mapping": 75, "segment_zero_count": 47, "ds": 1193.420933201945, "dm": 126313.41803975221, "splits": 8679, "mergers": 82, "path_length": 10357700.27925968, "inter_error_distance": 1182.2509164775345}, {"File": "l4_column-subset_axons_only_99-9.yaml", "Task": "evaluate_sparse_cell8_axon", "mapping": 80, "segment_zero_count": 47, "ds": 1508.7691593968946, "dm": 98644.7645643779, "splits": 6865, "mergers": 105, "path_length": 10357700.27925968, "inter_error_distance": 1486.0402122323787}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
 </body>
 </html>
